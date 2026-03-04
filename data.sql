@@ -1,0 +1,1 @@
+SELECT m.id AS id_murid, m.name, p.status, m.time_create, p.time_create FROM murid m JOIN pendidikan p ON m.id = p.id_murid WHERE p.id IN ( SELECT MAX(id) FROM pendidikan GROUP BY id_murid ) ORDER BY m.id ASC;
